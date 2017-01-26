@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         port = (EditText) findViewById(R.id.edittext_port);
 
 
-        SharedPreferences prefss = getSharedPreferences("de.htwdd.vokabeltrainer", MODE_PRIVATE);
+        SharedPreferences prefss = getSharedPreferences("de.dd.photoBox", MODE_PRIVATE);
 
         ip.setText(prefss.getString("ip", ""));
         port.setText(prefss.getString("port", ""));
@@ -71,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
                     _ip = "192.168.0.1";
                 if (_port == "")
                     _port = "80";
-                
-                final SharedPreferences.Editor prefs = getSharedPreferences("de.htwdd.vokabeltrainer", MODE_PRIVATE).edit();
+
+                final SharedPreferences.Editor prefs = getSharedPreferences("de.dd.photoBox", MODE_PRIVATE).edit();
                 prefs.putString("ip", _ip);
                 prefs.putString("port", _port);
                 prefs.commit();

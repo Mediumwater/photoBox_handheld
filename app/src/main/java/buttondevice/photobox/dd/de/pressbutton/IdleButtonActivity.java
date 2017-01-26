@@ -112,7 +112,7 @@ public class IdleButtonActivity extends AppCompatActivity {
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = findViewById(R.id.fullscreen_content);
 
-        SharedPreferences prefs = getSharedPreferences("de.htwdd.vokabeltrainer", MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences("de.dd.photoBox", MODE_PRIVATE);
 
         this.ip = prefs.getString("ip", "");
         this.port = prefs.getString("port", "");
