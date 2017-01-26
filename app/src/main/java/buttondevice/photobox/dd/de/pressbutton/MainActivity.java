@@ -71,15 +71,13 @@ public class MainActivity extends AppCompatActivity {
                     _ip = "192.168.0.1";
                 if (_port == "")
                     _port = "80";
-
+                
                 final SharedPreferences.Editor prefs = getSharedPreferences("de.htwdd.vokabeltrainer", MODE_PRIVATE).edit();
                 prefs.putString("ip", _ip);
                 prefs.putString("port", _port);
                 prefs.commit();
 
-                Intent idlebuttonintent = new Intent(getBaseContext(), IdleButtonActivity.class);
-                idlebuttonintent.putExtra("ip", _ip);
-                idlebuttonintent.putExtra("port", _ip);
+                Intent idlebuttonintent = new Intent(MainActivity.this, IdleButtonActivity.class);
                 startActivity(idlebuttonintent);
             }
         });

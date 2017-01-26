@@ -112,10 +112,10 @@ public class IdleButtonActivity extends AppCompatActivity {
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = findViewById(R.id.fullscreen_content);
 
-        SharedPreferences prefss = getSharedPreferences("de.htwdd.vokabeltrainer", MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences("de.htwdd.vokabeltrainer", MODE_PRIVATE);
 
-        this.ip = prefss.getString("ip", "");
-        this.port = prefss.getString("port", "");
+        this.ip = prefs.getString("ip", "");
+        this.port = prefs.getString("port", "");
 
         // Set up the user interaction to manually show or hide the system UI.
         mContentView.setOnClickListener(new View.OnClickListener() {
