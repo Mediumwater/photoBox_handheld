@@ -61,9 +61,7 @@ public class MainActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Log.d("jojo", "ada");
-
+                
                 String _ip = ip.getText().toString();
                 String _port = port.getText().toString();
 

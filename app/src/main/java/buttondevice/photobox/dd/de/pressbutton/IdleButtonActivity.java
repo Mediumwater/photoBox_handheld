@@ -139,7 +139,6 @@ public class IdleButtonActivity extends AppCompatActivity {
         //"http://192.168.178.69:80/"
         try {
             url = new URL("http://" + this.ip + ":" + this.port + "/");
-            //url = new URL("http://192.168.178.69:80/");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -155,7 +154,6 @@ public class IdleButtonActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            //readStream(in);
         } finally {
             urlConnection.disconnect();
         }
