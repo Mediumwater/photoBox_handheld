@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         port = (EditText) findViewById(R.id.edittext_port);
 
 
-        SharedPreferences prefss = getSharedPreferences("de.htwdd.vokabeltrainer", MODE_PRIVATE);
+        SharedPreferences prefss = getSharedPreferences("de.dd.photoBox", MODE_PRIVATE);
 
         ip.setText(prefss.getString("ip", ""));
         port.setText(prefss.getString("port", ""));
@@ -61,9 +61,7 @@ public class MainActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Log.d("jojo", "ada");
-
+                
                 String _ip = ip.getText().toString();
                 String _port = port.getText().toString();
 
@@ -72,14 +70,12 @@ public class MainActivity extends AppCompatActivity {
                 if (_port == "")
                     _port = "80";
 
-                final SharedPreferences.Editor prefs = getSharedPreferences("de.htwdd.vokabeltrainer", MODE_PRIVATE).edit();
+                final SharedPreferences.Editor prefs = getSharedPreferences("de.dd.photoBox", MODE_PRIVATE).edit();
                 prefs.putString("ip", _ip);
                 prefs.putString("port", _port);
                 prefs.commit();
 
-                Intent idlebuttonintent = new Intent(getBaseContext(), IdleButtonActivity.class);
-                idlebuttonintent.putExtra("ip", _ip);
-                idlebuttonintent.putExtra("port", _ip);
+                Intent idlebuttonintent = new Intent(MainActivity.this, IdleButtonActivity.class);
                 startActivity(idlebuttonintent);
             }
         });

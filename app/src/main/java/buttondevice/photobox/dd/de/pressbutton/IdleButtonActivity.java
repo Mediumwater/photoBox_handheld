@@ -126,10 +126,10 @@ public class IdleButtonActivity extends AppCompatActivity {
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = findViewById(R.id.fullscreen_content);
 
-        SharedPreferences prefss = getSharedPreferences("de.htwdd.vokabeltrainer", MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences("de.dd.photoBox", MODE_PRIVATE);
 
-        this.ip = prefss.getString("ip", "");
-        this.port = prefss.getString("port", "");
+        this.ip = prefs.getString("ip", "");
+        this.port = prefs.getString("port", "");
         final MediaPlayer mp = MediaPlayer.create(this, R.raw.pressed);
 
         //Vibrator v = (Vibrator) this.context.getSystemService(Context.VIBRATOR_SERVICE);
@@ -163,7 +163,6 @@ public class IdleButtonActivity extends AppCompatActivity {
         //"http://192.168.178.69:80/"
         try {
             url = new URL("http://" + this.ip + ":" + this.port + "/");
-            //url = new URL("http://192.168.178.69:80/");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -179,7 +178,6 @@ public class IdleButtonActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            //readStream(in);
         } finally {
             urlConnection.disconnect();
         }
